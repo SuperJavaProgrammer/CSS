@@ -1,0 +1,280 @@
+#p1 {color:red !important}	/*Важный*/
+#p1 {color:blue}
+
+#p2 {			/*Сокращенная запись свойства шрифта*/
+font: normal 100  small-caps 5em "Verdana"	/*font-style font-weight font-variant font-size/line-height font-family | inherit*/
+}
+
+#p2 {			/*Свойства шрифта*/
+font-family: "Verdana", "Tahoma";	/*serif, sans-serif, cursive, fantasy, monospace*/
+font-size: 2em;		/*em, %,  xx-small, x-small, small, medium, large, x-large, xx-large, larger, smaller*/
+font-weight: 700;		/*normal|bold|bolder|lighter|100|200|300|400|500|600|700|800|900|bolder|lighter*/
+font-style: italic;		/*normal/italic/oblique*/
+font-variant: small-caps;	/*normal|small-caps|inherit*/
+color: green;		/*(имя или число)  inherit. gray; #666666; #666; rgb(162,202,102); rgb(20%,50%,30%)*/
+}
+
+/*@font-face { font-family: MyriadPro; src: url("/fonts/myriadpro.woff")}	!*Загрузка нового шрифта*!*/
+#p3 { 
+font-family: MyriadPro;
+font-size: 50px;		/*Единицы измерения еm vw vh vm рх pt рс mm cm in rem*/
+ }
+
+#p4, #p5 {color:blue}		/*Сгруппированные селекторы, где #p4 - селектор идентификатора*/
+#p5 b {color:red}		/*Селекторы потомков*/
+#p4 > a {color:green}		/*Селектор дочерних элементов*/
+#p99 + b {color:red}		/*Селектор смежных элементов одного уровня*/	/*!*/
+#p99 ~ b {color:red}		/*Обобщенные селекторы одного уровня. b, который является соседним для p99  и следует после него*/		/*!*/
+.p8 {color:orange}		/*Селекторы классов*/
+*{color:gray}		/*Универсальный селектор*/
+
+#p9 { 			/*Форматирование текста*/
+line-height: 5mm;		/*Высота строки. Число|значение длины|проценты|normal|inherit*/
+text-indent: 30mm; 		/*Отступ первой строки. Значение длины|проценты|inherit*/
+text-align: justify;		/*Горизонтальное выравнивание. left|right|center|justify|inherit*/
+text-decoration: underline;	/*Подчеркивание. none|underline|overline|line-through|blink|inherit*/
+text-transform: capitalize;	/*Изменение регистра. none|capitalize|lowercase|uppercase|inherit*/
+letter-spacing: 5mm;		/*Интервал между знаками. Значение длины|normal|inherit*/
+word-spacing: 10mm;		/*Интервал между словами. Значение длины|normal|inherit*/
+text-shadow: .5em -.2em .3em gold;	/*Тень текста. «смещение по горизонтали» «смещение по вертикали» «радиус размытия» «цвет»|nonе*/
+vertical-align: top;		/*Вертикальное выравнивание. baseline|sub|super| top|text-top|middle|textbottom|bottom|%|длина|inherit*/
+white-space: pre;		/*Запись пробелов. normal|рrе|nowrap|pre-wrap|pre-line|inherit*/
+visibility: visible;	/*Показывать элемент. visible|hidden|collapse|inherit*/
+text-direction:	ltr;	/*Направление чтения текста. ltr|rtl|inherit*/
+}
+
+#ul10 {			/*Маркеры. Нумерация.*/
+/*none|disc|circle|square|decimal|decimal-leading-zero|lower-alpha|upper-alpha|lower-latin|upper-latin|lower-roman|upper-roman|lower-greek|inherit*/
+list-style-type: decimal;	
+list-style-position: outside;	/*Положение маркера. inside|outside|inherit*/
+list-style-image: url(pic.jpg);	/*Изображение маркера*/
+}
+
+#p11 {cursor: progress}		/*Курсор. auto/crosshair/default/pointer/move/n-resize/text/wait/progress/help*/
+
+#p12 {
+color: rgb(255, 255, 255);	/*Значения цветов в формате RGB*/
+color: rgb(100%, 100%, 100%);
+color: #FFCC00;
+color: #FC0;
+color: hsl(265, 23%, 90%);	/*Цвета HSL. Цветовой тон (hue), насыщенность (saturation) и светлота (lightness)*/
+color:RGBa(150, 200, 50, .8);	/*Цвета RGBa. +Прозрачность*/
+opacity: .4;			/*Прозрачность*/
+}
+
+/*Якорные псевдоклассы*/
+#p13:link {color: red}		/*Непосещенная ссылка*/
+#p13:visited {color: blue}	/*Посещенная*/
+
+/*Псевдоклассы действий пользователя*/
+#p14:focus {color: yellow}	/*Элемент выделен и готов ко вводу*/
+#p14:hover {color: green}	/*Указывает курсор*/
+#p14:active {color: lime}	/*Активно*/
+
+/*Структурные псевдоклассы*/
+p:root {}			/*Корневой элемент*/
+p:only-child {}		/*Является единственным дочерним элементом*/
+p:empty {}			/*Пустой элемент, не имеющий содержимого*/
+p:first-of-type {}		/*Для первого селектора в контейнере*/
+p:first-child {}		/*Селектор является первым элементом в контейнере*/
+p:last-of-type {}		/*Для последнего селектора в контейнере*/
+p:last-child {}		/*Селектор является последним элементом в контейнере*/
+p:only-of-type {}		/*Единственный данного типа*/
+p:nth-child (2) {}		/*2 по счету дочерний элемент*/
+p:nth-last-child (2) {}		/*2 по счету дочерний элемент с конца*/
+p:nth-of-type(2) {}		/*2 по счету элемент данного типа*/
+p:nth-last-of-type(2) {}		/*2 по счету элемент данного типа с конца*/
+p:not(:first-child) {} 		/*Для элементов, не удовлетворяющих условию*/
+a:target {}			/*Выбирает элементы, на которые нацелен идентификатор фрагментов в URL-адресе*/
+
+/*Селекторы пользовательского интерфейса*/
+:invalid {} 			/*Указано некорректное значение*/
+:enabled {}			/*Активные элементы*/
+:disabled {}			/*Неактивные элементы*/
+:checked {}			/*Выбранные элементы*/
+
+/*Селекторы псевдоэлементов*/
+#p15:first-letter {color: blue}		/*Первая буква*/
+#p15:first-line {color: red}		/*Первая срока*/
+#p15:before {content:" Before Added "}	/*Добавить вначало*/
+#p15:after {content:" AfterAdded"}		/*Добавить вконец*/
+
+/*Селектор поиска*/
+img[title] {width: 200px}		/*Селектор атрибута*/
+img[title= "Дева Якубовича"] {width: 170px}	/*Селектор точного значения атрибута*/
+img[title~="счастливая"] {width: 150px}	/*Задать часть значения атрибута, отделенную пробелами*/
+img[title|="счастливая"] {width: 130px}	/*Задать часть значения атрибута, отделенную дефисами*/	/*!*/
+img[src^="pp"] {width: 100px}		/*Заканчивается строкой символов*/
+img[title*="яшн"] {width: 70px}		/*Ищет строку в любой части заданного значения*/
+
+body {			/*Фон элемента*/
+background: black url(pic.jpg) no-repeat right top fixed;	/*Сокращенное свойство фона. Можно только один параметр*/
+background-image: url(pic.jpg);	/*Фоновый рисунок. URL-адрес|none|inherit*/
+background-color: green;	/*Фоновый цвет. Значение цвета (имя или число)|transparent(прозрачный)|inherit*/
+background-repeat: repeat-x;	/*Управление покрытием фона. repeat|repeat-x|repeat-y|no-repeat|inherit*/
+background-position: center top;	/*Положение фона. Значение длины|%|left|center|right|top|bottom|inherit*/
+background-attachment: fixed;	/*Фиксация фона. scroll | fixed | inherit*/
+background-clip: content-box;	/*Распространение фона. border-box|padding-box|content-box*/
+background-size: cover;	/*Размер. Значение длины|%|auto|cover|contain*/
+background-origin: border-box;	/*Начало отсчета. border-box|padding-box|content-box*/
+/*Множественные фоновые изображения*/
+background: url(pic.jpg) left top repeat-x, url(pic2.jpg) center center repeat-y, url(pic.jpg) 75% 75% repeat-y;
+}
+
+#p16 {	/*Линейные градиенты. to top, to right, to bottom, to left, ?deg*/
+background-image: linear-gradient(to right bottom, yellow, green);
+background-image: linear-gradient(90deg, yellow, orange 25%, green 75%, blue);
+}
+
+#p17 {	/*Повторяющийся линейный градиент*/
+background-image: repeating-linear-gradient(to right, red, blue 10%)
+}
+
+#p18 {	/*Радиальный градиент. closest-side, farthest-side, closest-corner, farthest-corner, cover, contain*/
+/*background-image: radial-gradient(center, contain, yellow, green);		!*error*!*/
+background-image: repeating-radial-gradient(circle closest-side at right bottom, white, red 10%, black 20%, blue 25%);
+}
+
+#p19 {	/*Задавание размеров блока*/
+width: 150px;		/*Ширина блока элемента. Значение длины|%|auto|inherit*/
+height: 100px; 		/*Высота. Значение длины|%|auto|inherit*/
+min-width: 90px;
+min-height: 90px;
+max-width: 110px;
+max-height: 110px;
+box-sizing: content-box;	/*Задавание размеров области контента*/
+box-sizing: border-box;		/*Обозначить ширину и высоту ко всему видимому блоку, включая отступы и границы*/
+overflow: scroll;	 	/*Выход контента за пределы блока. visible|hidden|scroll|auto|inherit*/
+}
+
+#p20 {	/*Внутренние отступы. Значение длины|%|inherit*/
+padding: 15mm 50px 20px 0;	/*Сверху, справа, снизу, слева*/
+padding: 15mm 50px;		/*Сверху, справа/снизу, слева*/
+padding: 15mm 50px 20px;	/*Сверху/справа, снизу/слева*/
+padding: 15mm;		/*Сверху/справа/снизу/слева*/
+padding-left: 20mm;
+padding-right: 5%;
+padding-top: 15mm;
+padding-bottom: 30px;
+}
+
+#p21 {	/*Границы*/
+/*border: groove, 5px, red;	!*Одновременное задание атрибутов рамки. border-style border-width border-color*!*/
+
+border-style: groove;		/*Сокращенная запись стиля границы, как и сокращенные Внутренние отступы*/
+border-left-style:solid;		/*none|dotted|dashed|solid|double|groove|ridge|inset|outset|inherit*/
+border-right-style: dashed;
+border-top-style: double;
+border-bottom-style: ridge;
+
+border-width: 5px;		/*Толщина границы*/
+border-left-width: thin;		/*значение длины|thin|medium|thick|inherit*/
+border-right-width: 5px;
+border-top-width: medium;
+border-bottom-width: thick;
+
+border-color: red;		/*Цвет границы*/
+border-left-color: red;		/*Имя цвета или значение RGB|transparent|inherit*/
+border-right-color: #000080;
+border-top-color: green;
+border-bottom-color: black;
+
+border-radius: 30%;		/*Скругление углов*/
+border-top-left-radius: 30px;	/*Значение длины|%*/
+border-top-right-radius: 10%;
+border-bottom-right-radius: 60px;
+border-bottom-left-radius: 20%;
+
+border-radius: 36px 40px 60px 20px/12px 10px 30px 36px;	/*Овальные углы. Горизонтальные значения по часовой стрелке/Вертикальные*/
+
+/*Красивые границы*/	/*!*/
+}
+
+	
+#p22 {	/*Поля*/
+margin: 10mm;		/*Значение длины|%|auto|inherit*/
+margin-left: 30px;
+margin-right: 5%;
+margin-top: 15mm;
+margin-bottom: 20px;
+display: table; 	/*Определять, как элементы должны себя вести в макетах. inline|block|list-item|inline-block|table|inline-table|table-row-group|table-header-group|table-footer-group|table-row|table-column-group|table-column|table-cell|table-caption|none.  Новые в CSS3: run-in|compact|ruby|ruby-base|ruby-text|ruby-base-container|ruby-textcontainer*/
+box-shadow: 3px 3px 0px 5px red inset;	/*Параметры тени у контейнера. Смещение по горизонтали, смещение по вертикали, расстояние размытия, расстояние распространения, цвет, inset|none*/
+}
+
+#p23 {
+float: right;		/*Обтекание. *left|right|none|inherit*/
+clear: left;		/*Запрет обтекания. left|right|both|none|inherit*/
+position: static;	/*static|relative(перемещает элемент относительно его начальной позиции в потоке)|absolute|fixed (значения смещения всегда относительны окну просмотра)|inherit/*
+top: 10px;		/*Задавание положения. Значение длины|%|auto|inherit*/
+right: 100px;
+bottom: 30px;
+left: 70px;
+z-index:5;		/*Порядок наложения слоев. Число|auto|inherit*/
+}
+
+#p24:hover {
+color: #00ff00;
+transition: color 3s ease 100ms;	/*Сокращенное свойство перехода. Свойство продолжительность тайминг задержка*/
+transition-property: color;	/*Определение свойства анимации*/
+transition-duration: 3s;	/*Продолжительность перехода. Значение времени*/
+transition-timing-function: ease;	/*Функции тайминга. ease|linear|ease-in|ease-out|ease-inout|step-start|step-end|steps|cubic-bezierf#,#,#,#*/
+transition-delay: 100ms;	/*Настройка задержки перед анимацией. Значение времени*/
+}
+
+#p25:hover {
+background-color: #00ff00;
+color: #0000ff;
+letter-spacing: 20px;
+transition: all 0.2s ease-in-out;	/*Любое изменяемое свойство элемента*/
+transition-property: background-color, color, letter-spacing;
+transition-duration: 3s, 2s, 3s;
+transition-timing-function: ease-out, ease-in, ease-out;
+transition-delay: 100ms, 200ms, 400ms;
+}
+
+#p26 {color: #ff0000; transition: color 2s }		/*Создание обратной анимации*/
+#p26:hover { color: #00ff00; transition: color 3s }
+
+#p27 {
+transform-origin: left top;	/*Изменить позицию поворота. %|Значение длины|left|center|right|top|bottom*/
+transform: rotate(-45deg);	/*Поворот*/
+transform: translateX(100px);	/*Перемещение*/
+transform: translateY(-200px);
+transform: translate(-50px, 100px);
+transform: scaleX(2);		/*Масштабирование*/
+transform: scaleY(0.5);
+transform: scale(1.25, 0.5);
+transform: skewX(25deg);	/*Наклон*/
+transform: skewY(-5deg);
+transform: skew(40deg, -60deg);
+transform: scale(0.5, 0.75) rotate(-5deg) translate(50px, 30px);	/*Множественные преобразования*/
+}
+
+@keyframes sample {		/*Анимация с несколькими состояниями*/
+0% { color: red; }
+25% { color: blue; }
+50% { color: yellow; }
+75% { color: black; }
+100% { color: green; }
+}
+
+#p28 { animation-name: sample;}	/*Начальное состояние*/
+#p28:hover {
+animation-name: sample;	/*Какую анимацию применить*/
+animation-duration: 10s;	/*Как долго она должна продолжаться*/
+animation-timing-function: linear;	/*Каким образом она должна воспроизводиться. linear*/
+animation-delay: 1s;		/*Задержка перед началом*/
+animation-iteration-count: 3;	/*Сколько раз повторяться. Число/infinite*/
+animation-direction: normal;	/*Направление анимации. normal/reverse/alternate/alternate-reverse*/
+animation-play-state: running;	/*Текущее состояние анимации. paused/running*/
+animation-fill-mode: forwards;	/*Положение анимированного элемента по окончанию анимации. forwards/none/backwars/both*/
+animation: sample 5s linear infinite alternate;	/*Сокращенный вид*/
+}
+
+#p29 {
+border-collapse: separate;	/*Границы между ячейками таблицы. separate|collapse|inherit*/
+border-spacing: 1px;		/*Задать размер промежутка между ячейками. Длина (между столбцами и между строками)
+border-spacing: 2px 5px;	/*Между столбцами между строками*/
+empty-cells: hide;		/*Отображать ли фон и границы для пустых ячеек. show|hide|inherit*/
+table-layout: auto;		/*Режим установки размеров для таблиц. fixed|auto*/
+}
